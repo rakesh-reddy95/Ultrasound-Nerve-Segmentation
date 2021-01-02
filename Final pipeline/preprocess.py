@@ -81,5 +81,15 @@ def preprocess_test_data():
     print("Preprocessing Images completed")
     return imgs_test, test_ids
 
+
+def preprocess_test_image(test_image):
+    test_image = np.array([test_image])
+    test_image = preprocess_images(test_image,96,96)
+    test_image = test_image.astype('float32')
+
+    test_image -= 98.14468
+    test_image /= 52.407845
+    return test_image
+
     
         
